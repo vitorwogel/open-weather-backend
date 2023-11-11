@@ -6,11 +6,9 @@ const app = express();
 
 app.use(cors());
 
-const port = 5000
-
 app.get('/', (req, res) => {
     res.send('server is running');
-})
+});
 
 app.get('/api', async (req, res) => {
     const { key, cityName } = req.query;
@@ -30,6 +28,4 @@ app.get('/api', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log('Server running on port ' + port);
-})
+export default app;
